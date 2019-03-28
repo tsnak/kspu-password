@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %} Регистрация {% endblock %}
+{% block content %}
+    <ol class="pills">
+    {% for faculty in faculties%}
+        {%  if faculty.link is not null %}
+            <li><a href=/registration/{{ faculty.link }}>{{ faculty.name }}</a></li>
+        {% endif %}
+    {% endfor %}
+    </ol>
+{% endblock %}

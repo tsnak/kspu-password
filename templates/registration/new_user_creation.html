@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% block title %} Регистрация {% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col-md-8">
+            <section id="loginForm">
+                <form class="form-horizontal" method="post" role="form">
+                    <hr/>
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label class="col-md-7">
+                            <div style="font-size: x-large; color: red"> {{ message }} </div>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">
+                            <div id="text_smaller">Фамилия</div>
+                        </label>
+                        <div class="col-md-4">
+                            <input class="form-control" id="Password" type="text" required name="surname"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">
+                            <div id="text_smaller">Имя</div>
+                        </label>
+                        <div class="col-md-4">
+                            <input class="form-control" id="Password" type="text" required name="name"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">
+                            <div id="text_smaller">Отчество</div>
+                        </label>
+                        <div class="col-md-4">
+                            <input class="form-control" id="Password" type="text" required name="patronymic"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">
+                            <div id="text_smaller">Должность</div>
+                        </label>
+                        <div class="col-md-4">
+                            <input class="form-control" id="Password" type="text" required name="position"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">
+                            <div id="text_smaller">Год приёма на работу (поступления)</div>
+                        </label>
+                        <div class="col-md-4">
+                            <input class="form-control" id="Password" type="text" required name="year"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">
+                            <div id="text_smaller">Номер удостоверения</div>
+                        </label>
+                        <div class="col-md-4">
+                            <input class="form-control" id="Password" type="text" required name="number"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">
+                            <div id="text_smaller">Имя пользователя</div>
+                        </label>
+                        <div class="col-md-4">
+                            <input class="form-control" id="Password" type="text" required name="login"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">
+                            <div id="text_smaller">Пароль</div>
+                        </label>
+                        <div class="col-md-4">
+                            <input class="form-control" id="password" type="password" minlength="6"
+                                   pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20})"
+                                   title="Пароль должен состоять из 6-20 символов, из них должна быть как минимум одна цифра, одна строчная и одна заглавная буква"
+                                   required name="password"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">
+                            <div id="text_smaller">Повторите пароль</div>
+                        </label>
+                        <div class="col-md-4">
+                            <input class="form-control" id="id_password" type="password" required name="repeat_new_password"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Принять" class="btn btn-default"/>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </div>
+
+    </div>
+{% endblock %}

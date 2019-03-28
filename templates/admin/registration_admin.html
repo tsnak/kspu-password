@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body class="container">
+    <form method="POST" action="registration_admin">
+        {% csrf_token %}
+        <p>
+            <label>Введите uid (логин)</label><br>
+            <input type="text" name="username" />
+        </p>
+        <input type="submit" value="Сохранить" >
+        <a href="/">Назад</a>
+    </form>
+    {% if people.count > 0 %}
+    <h2>Список пользователей</h2>
+    <table>
+        <tr><th>Id</th><th>uid (логин)</th><th>Полное Имя</th></tr>
+        {% for person in people %}
+        <tr><td>{{ person.id }}</td><td>{{ person.username }}</td><td>{{ person.fullname }}</td><td><a href="registration_admin/delete/{{person.id}}">Удалить</a></td></tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+</body>
+</html>

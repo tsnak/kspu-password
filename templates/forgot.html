@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %} Восстановление пароля {% endblock %}
+{% block content %}
+        <div class="row">
+        <div class="col-md-8">
+            <section id="loginForm">
+                <div id="text">Введите логин или email</div>
+                <form action="/forgot_password" class="form-horizontal" method="post" role="form">
+                    <hr/>
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">
+                            <div id="text_smaller">Введите логин или email</div>
+                        </label>
+                        <div class="col-md-4">
+                            <input class="form-control" id="Password" name="name"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Принять" class="btn btn-default"/>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </div>
+
+    </div>
+{% endblock %}

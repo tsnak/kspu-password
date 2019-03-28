@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block title %} Личный кабинет {% endblock %}
+{% block content %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+    <div>
+        <div class="row">
+                <div>
+                    <section id="loginForm">
+                        <form class="form-horizontal" method="post" role="form">
+                            <hr/>
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label class="col-md-2 control-label">
+                                    <div id="text_smaller">Поиск</div>
+                                </label>
+                                <div class="col-md-8">
+                                    <input type="text" class="form-control" id="search"/>
+                                </div>
+                                <button type="submit" id="show_all" value='*' class="btn btn-default">Показать всех</button>
+                            </div>
+                        </form>
+                    </section>
+                </div>
+
+        </div>
+        </div>
+        <div class="phone-filter">
+          <!-- Подгружаю номера телефонов из фильтра -->
+          {% include 'array_of_students.html' %}
+        </div>
+            <script>
+    $("#search").keyup(function(){
+      $('.phone-filter').html('').load(
+        "{% url 'array_of_students' %}?phone=" + this.value.replace(' ', '_').replace(' ', '_')
+      );
+    });
+
+    </script>
+
+
+{% endblock %}

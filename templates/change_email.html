@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %} Личный кабинет {% endblock %}
+{% block content %}
+
+    <div class="row">
+        <div class="col-md-8">
+            <div id="text">Ваш текущий email: {{ email }}</div>
+            <section id="loginForm">
+                <form action="/email" class="form-horizontal" method="post" role="form">
+                    <hr/>
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">
+                            <div id="text_smaller">Введите E-Mail</div>
+                        </label>
+                        <div class="col-md-4">
+                            <input class="form-control" id="Password" type="email" required name="email"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Принять" class="btn btn-default"/>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </div>
+
+    </div>
+{% endblock %}

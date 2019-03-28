@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="ru" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=9;chrome=1" />
+
+                        <title>{% block title %}Красноярский государственный педагогический университет им. В.П. Астафьева{% endblock %}</title>
+        <meta name="og:title" content="Красноярский государственный педагогический университет им. В.П. Астафьева"/>
+
+
+    <link rel="shortcut icon" href="http://www.kspu.ru/favicon.ico" type="image/vnd.microsoft.icon" />
+
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://www.kspu.ru/apple-touch-icon-144x144-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://www.kspu.ru/apple-touch-icon-114x114-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://www.kspu.ru/apple-touch-icon-72x72-precomposed.png" />
+    <link rel="apple-touch-icon-precomposed" href="http://www.kspu.ru/apple-touch-icon-precomposed.png" />
+
+    <link rel="alternate" type="application/rss+xml" title="Новости университета" href="/rss/4/" />
+
+
+    <link rel="home" href="http://www.kspu.ru" title="Красноярский государственный педагогический университет им. В.П. Астафьева" />
+
+    <link rel="search" href="http://www.kspu.ru/opensearch.xml" title="КГПУ им. В.П. Астафьева" type="application/opensearchdescription+xml" />
+
+    <meta name="robots" content="index, follow" />
+
+    <meta name="keywords" content="КГПУ, Красноярск, образование, Астафьев, ректор, Абитуриент, поступление, университет, педагогика"/>
+
+    <meta property="fb:admins" content="100000719572411" />
+    <meta property="og:site_name" content="Красноярский государственный педагогический университет им. В.П. Астафьева" />
+    <meta property="email" content="webmaster@www.kspu.ru" />
+    <meta property="phone_number" content="+73912171717" />
+
+                    <link rel="canonical" href="/" title="Главная страница нового сайта" />
+    <meta property="og:url" content="/" />
+
+
+                <meta name="author" content="КГПУ им. В.П. Астафьева" />
+        <meta property="og:type" content="company" />
+        <meta property="og:description" content="Добро пожаловать на сайт университета!" />
+        <meta property="description" content="Добро пожаловать на сайт университета!" />
+
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+    <link href="{% static "login_style.css" %}" rel="stylesheet"/>
+
+    <link rel="stylesheet" type="text/css" href="http://static.kspu.ru/assets/normalize.min.css" />
+    <link rel="stylesheet" href="{% static "style.css" %}" />
+ <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+        var PERSON_SEARCH_URL = "http:\/\/www.kspu.ru\/json\/person\/"    </script>
+</head>
+
+<body>
+            <div id="layout" class="f-push">
+        <div class="l-header" itemscope itemtype="http://schema.org/WPHeader">
+
+    <div class="header-c h-first">
+        <div class="sidebar s-right">
+            <div class="languages">
+                <a href="#" class="flag-ru"></a>
+                <span class="flag-en"></span>
+            </div>
+                                        <a href="http://www.kspu.ru/phonebook/" class="top phonebook"><span class="iconize">Телефонный справочник</span></a>
+            <div class="form-search-w">
+                <form method="get" action="http://www.kspu.ru/search/" class="form-search">
+                    <div class="q-w">
+                        <input required placeholder="Поиск" type="search" name="query" class="q" />
+                    </div>
+                    <input class="s" type="submit" value="" />
+                </form>
+            </div>
+{#                        <a itemprop="Copy" class="s-menu" title="Версия сайта для слабовидящих" href="http://www.kspu.ru/cset/?vi=1">Версия сайта для слабовидящих</a>#}
+                </div>
+
+        <div class="logo"><a href="http://www.kspu.ru/as-index/"><img class="clipart" alt="Красноярский государственный педагогический университет им. В.П. Астафьева" src="http://www.kspu.ru/img/logoh-100.png" /></a></div>
+
+        <div class="l-content">
+            <h2>Федеральное государственное бюджетное образовательное учреждение высшего образования</h2>
+            <h1>Красноярский государственный педагогический университет <small>им. В.П. Астафьева</small></h1>
+        </div>
+    </div>
+
+
+    <div class="header-c h-second">
+        <div class="sidebar s-right">
+            <ul class="menu"><li class="phonebook"><a href="http://www.kspu.ru/phonebook/">Телефонный справочник</a></li></ul>
+        </div>
+
+        <div class="l-content">
+            <ul class="menu"><li><a href="http://www.kspu.ru/as-abiturient/">Школьнику и абитуриенту</a></li><li><a href="http://www.kspu.ru/as-student/">Обучающемуся</a></li><li><a href="http://www.kspu.ru/division/profakcent/">Выпускнику</a></li><li><a href="http://www.kspu.ru/division/post-graduate/">Аспиранту</a></li><li><a href="http://www.kspu.ru/as-employer/">Работнику</a></li></ul>    </div>
+    </div>
+        <div class="mcontacts" itemscope itemtype="http://schema.org/CollegeOrUniversity">
+            <meta itemprop="name" content="Красноярский государственный педагогический университет им. В.П. Астафьева" />
+
+            <div itemprop="location" itemscope itemtype="http://schema.org/Place">
+                <div itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
+                    <meta itemprop="latitude" content="56.016" />
+                    <meta itemprop="longitude" content="92.86" />
+                </div>
+            </div>
+
+            <p>
+                <span class="js-action ymap address" itemscope itemtype="http://schema.org/PostalAddress">
+                    <span itemprop="postalCode">660049</span>
+                    <span itemprop="addressLocality">г. Красноярск</span>,
+                    <span itemprop="streetAddress">ул. Ады Лебедевой, 89</span>;
+                </span>
+                <span><strong>телефон-факс:</strong>
+                <a href="tel:83912171717" itemprop="telephone">(391)&nbsp;217&ndash;17&ndash;17</a>;</span>
+                <span><strong>приемная ректора:</strong>
+                <a href="tel:83912171777" itemprop="telephone">(391)&nbsp;217&ndash;17&ndash;77</a>;</span>
+                <span><strong>приемная комиссия:</strong>
+                <a href="tel:83912171711" itemprop="telephone">(391)&nbsp;217&ndash;17&ndash;11</a>;</span>
+                <span><strong>e-mail:</strong>
+                <a href="mailto:kspu@kspu.ru" itemprop="email">kspu@kspu.ru</a>;</span>
+            </p>
+        </div>
+            </div>
+
+    <div id="middle" class="f-affect">
+    <div class="l-wrapper">
+            <div>
+                    {% block content %}{% endblock %}
+            </div>
+    </div>
+    </div>
+</div>
+    <div id="footer" class="l-footer" itemscope itemtype="http://schema.org/WPFooter"><div class="copy">
+    <ul class="social-map">
+        <li><a target="_blank" class="vk" href="https://vk.com/kspu1932"></a></li>
+	<!-- Магия для инстаграма. Лень менять код, потому тупо заменили картинку яндекса  -->
+	<li><a target="_blank" class="yandex" href="http://instagram.com/kspu_1932"></a></li>
+        <li><p title="KSPU TODAY"><a target="_blank" class="youtube" href="http://www.youtube.com/user/NEWSKSPU/featured"></a></p></li>
+        <li><p title="3.14 Pi"><a target="_blank" class="youtube" href="http://youtube.com/314Pi"></a></p></li>
+	<!-- На всякий случай  -->
+        <!-- <li><span class="twitter"></span></li> -->
+    </ul>
+    <p>&copy; Красноярский государственный педагогический университет им. В.П. Астафьева. 2006&mdash;2018. Перепечатка с указанием ссылки</p>
+    <p><a href="#">Карта проезда</a> | <a href="http://www.kspu.ru/page-6201.html">Контактная информация</a> | <a href="http://www.kspu.ru/sitemap/">Карта сайта</a> </p>
+    <p>
+        Сообщить об ошибке, разместить информацию: <a href="mailto:kspu255@mail.ru" itemprop="email">kspu255@mail.ru</a>, <a href="mailto:rio257@mail.ru" itemprop="email">rio257@mail.ru</a>.
+        Техническая поддержка сайта: <a href="mailto:webmaster@kspu.ru" itemprop="email">webmaster@kspu.ru</a>.
+    </p>
+    <p>
+        <!-- <a href="http://old.kspu.ru">Предыдущая версия сайта</a>. -->
+    </p>
+</div>
+    </div>
+</body>
+<script type="text/javascript" src="http://static.kspu.ru/assets/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="http://static.kspu.ru/assets/raven.1.1.2.js"></script>
+<script type="text/javascript" src="http://static.kspu.ru/assets/jquery-ui-1.10.3.custom.min.js"></script>
+<link rel="stylesheet" type="text/css" href="http://static.kspu.ru/style/smoothness-kspu/jquery-ui-1.10.3.custom.css">
+<script type="text/javascript" src="http://www.kspu.ru/script/tools.js?bfd088bb523005df3f14e2788470a698c7314640"></script>
+<link rel="stylesheet" type="text/css" href="http://static.kspu.ru/assets/shadowbox/shadowbox.css" />
+<script type="text/javascript" src="http://static.kspu.ru/assets/shadowbox/shadowbox.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="http://static.kspu.ru/assets/qtip2/jquery.qtip.min.css" />
+<script type="text/javascript" src="http://static.kspu.ru/assets/qtip2/jquery.qtip.min.js"></script>
+    <script type="text/javascript" src="http://www.kspu.ru/script/imagesloaded.pkgd.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            var b = $('ul.media-block');
+            var d = b.imagesLoaded;
+            try {d = d = d.call(b);} catch(e) {d = null}
+
+            if(!d) return;
+
+            d.progress(function(defer, image) {
+                if(!image.isLoaded) return;
+                var i = $(image.img);
+                if(i.hasClass('clipart')) return;
+
+                i.css('margin-top', 100 * (i.parents('div:first').height() - i.height()) / 2 / i.height() + '%');
+            });
+        });
+    </script>
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-22340188-1']);
+  _gaq.push(['_trackPageview']);
+  _gaq.push(['_setDomainName', 'www.kspu.ru']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+</html>

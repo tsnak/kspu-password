@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %} Личный кабинет {% endblock %}
+{% block content %}
+    <table class="table_blur" style="margin: auto;" id="table" >
+        <thead>
+            <tr>
+                <th> <div id="text_smaller">Логин </div></th>
+                <th> <div id="text_smaller">ФИО </div></th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in data %}
+            <tr>
+                <td id="text">{{ user.login }}</td>
+                <td id="text">{{ user.surname }} {{ user.name}} {{user.patronymic }}</td>
+                <td id="text"><a href="add_user/{{ user.id }}">Добавить пользователя</a></td>
+                <td id="text"><a href="delete_user/{{ user.id }}">Удалить пользователя</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

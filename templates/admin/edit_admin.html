@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <p>
+            <label>Введите uid (логин)</label><br>
+            <input type="text" name="username" value="{{person.username}}" />
+        </p>
+        <p>
+            <label>Введите Права</label><br>
+            <input type="text" name="right" value="{{person.right}}" />
+        </p>
+        <input type="submit" value="Сохранить" >
+    </form>
+
+</body>
+</html>

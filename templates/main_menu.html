@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %} Личный кабинет {% endblock %}
+{% block content %}
+    <ul class="border">
+    {% if changer %}
+        <li><a href="students_view">Изменить пароли студентов</a></li>
+    {% endif %}
+    {% if regAdmin %}
+        <li><a href="accept_user">Подтвердить пользователей</a></li>
+    {% endif %}
+        <li><a href="change_password">Изменить пароль</a></li>
+        <li><a href="go_to_email">Добавить/изменить email</a></li>
+        <li><a href="logout">Выйти</a></li>
+    </ul>
+{% endblock %}

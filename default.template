@@ -1,0 +1,22 @@
+server {
+
+    listen      ${NGINX_PORT};
+    server_name     ${NGINX_HOST}; # замените на собственный домен или IP адрес
+
+    #charset     utf-8;
+    #client_max_body_size 75M;
+
+    location /media  {
+        alias /var/www/media;
+    }
+
+    location /static {
+        alias /var/www/static/;
+
+    }
+
+    location / {
+        include     /var/www/kspu-password/uwsgi_params; # файл uwsgi_params, который мы только что взяли с github
+        uwsgi_pass  uwsgi:8800;
+   }
+}

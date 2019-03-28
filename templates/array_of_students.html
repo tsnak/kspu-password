@@ -1,0 +1,21 @@
+{% if students%}
+        <table class="table_blur" style="margin: auto;" id="table" >
+    <thead>
+        <tr>
+            <th> <div id="text_smaller">Логин </div></th>
+            <th> <div id="text_smaller">Полное имя </div></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for person in students %}
+        <tr>
+            <td id="text">{{ person.0 }}</td>
+            <td id="text">{{ person.1 }}</td>
+            <td id="text"><a href="change_student_password/{{ person.0 }}">Изменить пароль</a></td></tr>
+        {% endfor %}
+    </tbody>
+        </table>
+{% else %}
+  По вашему запросу ничего не найдено
+{% endif %}

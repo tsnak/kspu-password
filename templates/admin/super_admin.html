@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body class="container">
+    <form method="POST" action="add_admin">
+        {% csrf_token %}
+        <p>
+            <label>Введите uid (логин)</label><br>
+            <input type="text" name="username" />
+        </p>
+        <p>
+            <label>Введите Права</label><br>
+            <input type="text" name="right" />
+        </p>
+        <input type="submit" value="Сохранить" >
+        <a href="logout">Выйти</a>
+        <a href="registration_admin">Права на регистрацию пользователей</a>
+    </form>
+    {% if people.count > 0 %}
+    <h2>Список пользователей</h2>
+    <table>
+        <tr><th>Id</th><th>uid (логин)</th><th>Полное Имя</th><th>Права</th></tr>
+        {% for person in people %}
+        <tr><td>{{ person.id }}</td><td>{{ person.username }}</td><td>{{ person.fullname }}</td><td>{{ person.right }}</td><td><a href="edit_admin/{{person.id}}">Изменить</a> | <a href="delete_admin/{{person.id}}">Удалить</a></td></tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+</body>
+</html>

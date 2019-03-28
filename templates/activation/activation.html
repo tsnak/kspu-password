@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% block title %} Активация {% endblock %}
+{% block content %}
+    <h1>
+	<a href="notes">Памятка первокурснику пользователю сети КГПУ им В.П. Астафьева</a>
+    </h1>
+
+    <p>
+	На этой странице вам предстоит активировать учетную запись для доступа к <a href="http://mail.kspu.ru">электронной почте КГПУ</a>, <a href="http://e.kspu.ru">базе электронных учебных ресурсов</a> и сети интернет.
+	Вам необходимо будет указать Имя пользователя (логин), паспортные данные и самим придумать пароль.
+	Будьте внимательны при выборе пароля.
+	Если вы его забудете, то вы не сможете пользоваться сервисами сети КГПУ
+	(новый пароль можно будет получить потом в деканате).
+	Также никому не сообщайте ваш пароль. Любой, кто знает ваше Имя пользователя (логин) и пароль
+	имеет доступ к вашей электронной почте и другим ресурсам от вашего имени.
+    </p>
+
+    <div class="row">
+        <div class="col-md-8">
+            <section id="loginForm">
+                <form class="form-horizontal" method="post" role="form">
+                    <hr/>
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label class="col-md-7">
+                            <div style="font-size: x-large; color: red"> {{ message }} </div>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">
+                            <div id="text_smaller">Имя пользователя</div>
+                        </label>
+                        <div class="col-md-4">
+                            <input class="form-control" type="text" required name="login"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">
+                            <div id="text_smaller">Серия и номер паспорта</div>
+                        </label>
+                        <div class="col-md-4">
+                            <input class="input-sm" type="text" required name="passport_series" placeholder="Серия"/> -
+                            <input class="input-sm" type="text" required name="passport_number" placeholder="Номер"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">
+                            <div id="text_smaller">Номер зачётной книжки или студенческого билета</div>
+                        </label>
+                        <div class="col-md-4">
+                            <input class="form-control" type="text" required name="number"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">
+                            <div id="text_smaller">Пароль</div>
+                        </label>
+                        <div class="col-md-4">
+                            <input class="form-control" id="password" type="password" minlength="6"
+                                   pattern="((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20})"
+                                   title="Пароль должен состоять из 6-20 символов, из них должна быть как минимум одна цифра, одна строчная и одна заглавная буква"
+                                   required name="password"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-md-2 control-label">
+                            <div id="text_smaller">Повторите пароль</div>
+                        </label>
+                        <div class="col-md-4">
+                            <input class="form-control" id="id_password" type="password" required name="repeat_new_password"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Принять" class="btn btn-default"/>
+                        </div>
+                    </div>
+                </form>
+            </section>
+        </div>
+
+    </div>
+{% endblock %}
